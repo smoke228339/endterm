@@ -1,10 +1,11 @@
-//
+package com.company;//
 // Source code recreated from a .class file by IntelliJ IDEA
 // (powered by FernFlower decompiler)
 //
 
 import controllers.interfaces.IProductController;
 import entities.Product;
+
 import java.io.PrintStream;
 import java.util.List;
 import java.util.Objects;
