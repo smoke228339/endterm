@@ -56,7 +56,7 @@ public class UserConsole {
         System.out.println("Enter password:");
         String password = scanner.next();
         System.out.println("Enter role (user):");
-        String role = "user"; // For now we only allow 'user' role for simplicity.
+        String role = "user";
         boolean result = userRepository.registerUser(username, password, role);
         System.out.println(result ? "Registration successful!" : "Registration failed.");
     }
