@@ -63,4 +63,14 @@ public class ProductController implements IProductController {
         }
         return "Failed to delete product.";
     }
+    @Override
+    public List<Product> getExpensiveProducts() {
+        List<Product> products = productRepository.getAllProducts();
+
+        // Фильтруем товары с ценой больше 1000 с помощью лямбда-выражения
+        return products.stream()
+                .filter(product -> product.getPrice() > 1000)
+                .toList();
+    }
+
 }
