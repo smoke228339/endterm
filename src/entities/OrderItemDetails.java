@@ -12,7 +12,6 @@ public class OrderItemDetails {
     private int productQuantity;
     private int productYear;
 
-    // Конструктор
     public OrderItemDetails(int orderId, Date orderDate, int orderQuantity, int productId,
                             String productName, double productPrice, int productQuantity, int productYear) {
         this.orderId = orderId;
@@ -25,7 +24,6 @@ public class OrderItemDetails {
         this.productYear = productYear;
     }
 
-    // Геттеры и сеттеры
 
     public int getOrderId() {
         return orderId;

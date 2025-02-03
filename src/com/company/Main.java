@@ -15,22 +15,18 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Используем Singleton
+        // Singleton
         IDB db = PostgresDB.getInstance();
 
-        // Создаём репозитории
         IProductRepository productRepo = new ProductRepository(db);
         IUserRepository userRepo = new UserRepository(db);
         IOrderRepository orderRepo = new OrderRepository(db);
 
-        // Создаём контроллер
         IProductController productController = new ProductController(productRepo);
 
-        // Создаём консоли
         UserConsole userConsole = new UserConsole(productController, (UserRepository) userRepo);
-        AdminConsole adminConsole = new AdminConsole(productController, orderRepo); // Добавили orderRepo
+        AdminConsole adminConsole = new AdminConsole(productController, orderRepo);
 
-        // Выбор консоли
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Product Management Application");
         System.out.println("1. Admin Console");

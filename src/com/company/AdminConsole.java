@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class AdminConsole {
     private final IProductController productController;
-    private final IOrderRepository orderRepository;  // Репозиторий для заказов
+    private final IOrderRepository orderRepository;
     private final Scanner scanner;
 
 
@@ -49,7 +49,7 @@ public class AdminConsole {
                     viewAllProducts();
                     break;
                 case 5:
-                    viewOrderDetails();  // Новый пункт меню для информации о заказах
+                    viewOrderDetails();
                     break;
                 case 6:
                     viewExpensiveProducts();

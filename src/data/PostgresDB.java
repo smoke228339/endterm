@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class PostgresDB implements IDB {
     private static PostgresDB instance;
 
-    private PostgresDB() {} // Приватный конструктор
+    private PostgresDB() {}
 
     public static PostgresDB getInstance() {
         if (instance == null) {

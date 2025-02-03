@@ -18,7 +18,7 @@ public class UserRepository implements IUserRepository {
         String query = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
         try (Connection con = db.getConnection(); PreparedStatement stmt = con.prepareStatement(query)) {
             stmt.setString(1, username);
-            stmt.setString(2, password); // Не забудьте хешировать пароль для безопасности!
+            stmt.setString(2, password);
             stmt.setString(3, role);
             return stmt.executeUpdate() > 0;
         } catch (SQLException | ClassNotFoundException e) {
