@@ -10,4 +10,6 @@ public interface IProductController {
     List<Product> getAllProducts();
     String updateProduct(int id, String name, int price, int quantity, int year);
     String deleteProduct(int id);
+    List<Product> getExpensiveProducts();
+
 }
