@@ -43,10 +43,10 @@ public class ProductController implements IProductController {
         if (product == null) {
             return "Product with ID " + id + " not found.";
         }
-        product.setName(name);
-        product.setPrice(price);
-        product.setQuantity(quantity);
-        product.setYear(year);
+        product.ProductBuilder.setName(name);
+        product.ProductBuilder.setPrice(price);
+        product.ProductBuilder.setQuantity(quantity);
+        product.ProductBuilder.setYear(year);
 
         boolean isUpdated = productRepository.updateProduct(product);
         if (isUpdated) {
@@ -66,9 +66,9 @@ public class ProductController implements IProductController {
     @Override
     public List<Product> getExpensiveProducts() {
         List<Product> products = productRepository.getAllProducts();
+
         return products.stream()
                 .filter(product -> product.getPrice() > 1000)
                 .toList();
     }
-
 }
