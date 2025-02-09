@@ -38,7 +38,6 @@ public class ProductRepository implements IProductRepository {
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 return new Product(
-                        rs.getInt("id"),
                         rs.getString("name"),
                         rs.getInt("price"),
                         rs.getInt("quantity"),
@@ -59,7 +58,6 @@ public class ProductRepository implements IProductRepository {
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
                 Product product = new Product(
-                        rs.getInt("id"),
                         rs.getString("name"),
                         rs.getInt("price"),
                         rs.getInt("quantity"),
